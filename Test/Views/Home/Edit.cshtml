@@ -1,0 +1,105 @@
+﻿@model Test.Models.ProductEditModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+   
+  
+    <div class="container">
+        <h4 class="m4">Chỉnh sửa người dùng</h4>
+        <hr />
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row m-4">
+                <div class="col-sm-4">
+
+                    <img src="/css/img/images.png" class="rounded-circle">
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label">Họ và tên</label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-6 ">
+                            <div class="form-group">
+                                <label asp-for="Date" class="control-label">Ngày sinh</label>
+                                <input asp-for="Date" class="form-control" />
+                                <span asp-validation-for="Date" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label">Email</label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <div>Vai trò</div>
+                        <input type="submit" value="Quản trị" class="btn btn-primary m-md-2 rounded-sm" />
+                        <input type="submit" value="Bộ phận tiếp nhận" class="btn btn-primary m-md-3 rounded-20" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        
+                        <label for="Note">Ghi chú</label>
+                        <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Quản trị tòa nhà"></textarea>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm"></div>
+
+
+                <div class="form-group d-flex justify-content-end">
+                    <input type="submit" value="Hủy" class="btn btn-danger m-md-2" />
+
+
+                    <input type="submit" value="Lưu" class="btn btn-primary m-md-2" />
+                </div>
+
+            </div>
+        </form>
+        <div>
+            <a asp-action="Index">Trang Chủ</a>
+        </div>
+    </div>
+
+    
+</body>
+</html>
